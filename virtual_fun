@@ -1,0 +1,38 @@
+VIRTUAL FUNCTION:
+                .Virtual function is a member function which is declared within base class only and redined by derived class.
+                .virtual function should written in base class only.
+                .with the help of base class pointer,we can access both base class and derived class members.
+                .when using virtual function we can create seperated object for base class and derived class.
+
+
+
+
+#include <iostream>
+using namespace std;
+class base
+{
+    public:
+    int x=5;
+     virtual void display()
+    {
+        cout<<"Base class X value :"<<x<<endl;
+    }
+};
+class Derived:public base
+{
+    public:
+    int y=8;
+    void display()
+    {
+        cout<<"Derived class Y value :"<<y<<endl;
+    }
+};
+int main() {
+ base *bptr,b;
+bptr=&b;
+ bptr->display();
+Derived d;
+bptr=&d;
+bptr->display();
+    return 0;
+}
